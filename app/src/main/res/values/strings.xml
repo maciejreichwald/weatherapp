@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="unknown">Unknown</string>
+    <string name="unknown_small">unknown</string>
+    <string name="none">None</string>
+    <string name="loading_error">Error during loading website source occurred</string>
+    <string name="no_cities">No cities found</string>
+    <string name="city_hint">Type city to search</string>
+    <string name="search">Search</string>
+    <string name="location">φ %s  |  λ %s</string>
+    <string name="temperature_value">%.2f°C</string>
+    <string name="pressure_value">%.2fhPa</string>
+    <string name="humidity_value">%.2f%%</string>
+
+    <string name="thunderstorm">Thunderstorm</string>
+    <string name="thunderstorm_0">thunderstorm with light rain</string>
+    <string name="thunderstorm_1">thunderstorm with rain</string>
+    <string name="thunderstorm_2">thunderstorm with heavy rain</string>
+    <string name="thunderstorm_3">light thunderstorm</string>
+    <string name="thunderstorm_4">thunderstorm</string>
+    <string name="thunderstorm_5">heavy thunderstorm</string>
+    <string name="thunderstorm_6">ragged thunderstorm</string>
+    <string name="thunderstorm_7">thunderstorm with light drizzle</string>
+    <string name="thunderstorm_8">thunderstorm with drizzle</string>
+    <string name="thunderstorm_9">thunderstorm with heavy drizzle</string>
+
+    <string name="drizzle">Drizzle</string>
+    <string name="drizzle_0">light intensity drizzle</string>
+    <string name="drizzle_1">drizzle</string>
+    <string name="drizzle_2">heavy intensity drizzle</string>
+    <string name="drizzle_3">light intensity drizzle rain</string>
+    <string name="drizzle_4">drizzle rain</string>
+    <string name="drizzle_5">heavy intensity drizzle rain</string>
+    <string name="drizzle_6">shower rain and drizzle</string>
+    <string name="drizzle_7">heavy shower rain and drizzle</string>
+    <string name="drizzle_8">shower drizzle</string>
+
+    <string name="rain">Rain</string>
+    <string name="rain_0">light rain</string>
+    <string name="rain_1">moderate rain</string>
+    <string name="rain_2">heavy intensity rain</string>
+    <string name="rain_3">very heavy rain</string>
+    <string name="rain_4">extreme rain</string>
+    <string name="rain_5">freezing rain</string>
+    <string name="rain_6">light intensity shower rain</string>
+    <string name="rain_7">shower rain</string>
+    <string name="rain_8">heavy intensity shower rain</string>
+    <string name="rain_9">ragged shower rain</string>
+
+    <string name="snow">Snow</string>
+    <string name="snow_0">light snow</string>
+    <string name="snow_1">snow</string>
+    <string name="snow_2">heavy snow</string>
+    <string name="snow_3">sleet</string>
+    <string name="snow_4">shower sleet</string>
+    <string name="snow_5">light rain and snow</string>
+    <string name="snow_6">rain and snow</string>
+    <string name="snow_7">light shower snow</string>
+    <string name="snow_8">shower snow</string>
+    <string name="snow_9">heavy shower snow</string>
+
+    <string name="atmosphere">Mist</string>
+    <string name="atmosphere_0">mist</string>
+    <string name="atmosphere_1">smoke</string>
+    <string name="atmosphere_2">haze</string>
+    <string name="atmosphere_3">sand, dust whirls</string>
+    <string name="atmosphere_4">fog</string>
+    <string name="atmosphere_5">sand</string>
+    <string name="atmosphere_6">dust</string>
+    <string name="atmosphere_7">volcanic ash</string>
+    <string name="atmosphere_8">squalls</string>
+    <string name="atmosphere_9">tornado</string>
+
+    <string name="clear_sky">Clear Sky</string>
+    <string name="clouds">Clouds</string>
+    <string name="clouds_0">clear sky</string>
+    <string name="clouds_1">few clouds</string>
+    <string name="clouds_2">scattered clouds</string>
+    <string name="clouds_3">broken clouds</string>
+    <string name="clouds_4">overcast clouds</string>
+
+    <string name="extreme">Extreme</string>
+    <string name="extreme_0">tornado</string>
+    <string name="extreme_1">tropical storm</string>
+    <string name="extreme_2">hurricane</string>
+    <string name="extreme_3">cold</string>
+    <string name="extreme_4">hot</string>
+    <string name="extreme_5">windy</string>
+    <string name="extreme_6">hail</string>
+
+    <string name="additional">Additional</string>
+    <string name="additional_0">calm</string>
+    <string name="additional_1">light breeze</string>
+    <string name="additional_2">gentle breeze</string>
+    <string name="additional_3">moderate breeze</string>
+    <string name="additional_4">fresh breeze</string>
+    <string name="additional_5">strong breeze</string>
+    <string name="additional_6">high wind, near gale</string>
+    <string name="additional_7">gale</string>
+    <string name="additional_8">severe gale</string>
+    <string name="additional_9">storm</string>
+    <string name="additional_A">violent storm</string>
+    <string name="additional_B">hurricane</string>
+    <string name="weather">Weather</string>
+    <string name="details">Details</string>
+    <string name="temperature">Temperature</string>
+    <string name="pressure">Pressure</string>
+    <string name="humidity">Humidity</string>
+</resources>

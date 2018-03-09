@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="city"
+            type="com.rudearts.weatherapp.model.local.City"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_colossal"
+        android:paddingRight="@dimen/margin_colossal"
+        android:paddingTop="@dimen/margin_small"
+        android:paddingBottom="@dimen/margin_small"
+        android:orientation="horizontal"
+        android:background="@drawable/primary_pressable"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/margin_colossal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{city.name}"
+                android:textColor="@color/primary_dark"
+                android:textSize="@dimen/text_big_size"
+                tools:text="Harare"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.format(@string/location,city.latitude,city.longitude)}"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/text_small_size"
+                tools:text="Zimbabwe"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary"
+            android:textAllCaps="true"
+            android:text="@{city.country}"
+            tools:text="pl"
+            />
+    </LinearLayout>
+
+
+</layout>
