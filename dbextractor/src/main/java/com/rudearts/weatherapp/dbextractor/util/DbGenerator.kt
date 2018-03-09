@@ -23,10 +23,8 @@ class DbGenerator @Inject constructor(
 
     var idCounter = 0
 
-    fun generateDb():Single<Unit> = Single.create({ subscriber ->
-        loader.loadAssetByObject(ASSET_PATH, this::saveCityAsset)
-        subscriber.onSuccess(Unit)
-    })
+    fun generateDb():Single<Unit> =
+            Single.fromCallable { loader.loadAssetByObject(ASSET_PATH, this::saveCityAsset) }
 
     private fun saveCityAsset(jsonReader: JsonReader) {
         val cityAsset = Gson().fromJson<CityAsset>(jsonReader, CityAsset::class.java)
@@ -40,10 +38,10 @@ class DbGenerator @Inject constructor(
     private fun updateProgress(cityAsset:CityAsset) {
         idCounter++
 
-        if(idCounter % 1000 == 1) {
-            Log.d("City", "City: ${cityAsset.name} ID: ${cityAsset.id} Country: ${cityAsset.country} Counter: $idCounter")
-            NYBus.get().post(ProgressEvent(idCounter))
-        }
+        if(idCounter % 1000 != 1) return
+
+        Log.d("City", "City: ${cityAsset.name} ID: ${cityAsset.id} Country: ${cityAsset.country} Counter: $idCounter")
+        NYBus.get().post(ProgressEvent(idCounter))
     }
 
 }

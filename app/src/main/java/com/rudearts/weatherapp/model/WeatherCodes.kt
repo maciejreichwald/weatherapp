@@ -110,10 +110,10 @@ class WeatherCodes {
 
     fun hasIconCode(code:String?) = iconCodes.containsKey(code)
 
-    fun iconIdByCode(code:String) = iconCodes[code] ?: 0
+    fun iconIdByCode(code:String?) = code.let { iconCodes[code] } ?: 0
 
     fun hasDescriptionCode(code:Int?) = descriptionCodes.containsKey(code)
 
-    fun descriptionIdByCode(code:Int) = descriptionCodes[code] ?: 0
+    fun descriptionIdByCode(code:Int?) = code.let { descriptionCodes[code] } ?: 0
 
 }

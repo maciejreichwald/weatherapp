@@ -16,16 +16,15 @@ class SearchCitiesUseCase @Inject constructor(
         private const val QUERY_LIMIT = 10000
     }
 
-    fun search(city:String):Single<List<City>> = Single.create { subscriber ->
-        val query = database.cityDbDao.queryBuilder()
-
-        val cities = query
-                .where(CityDbDao.Properties.Name.like("$city%"))
-                .orderAsc(CityDbDao.Properties.Name)
-                .limit(QUERY_LIMIT)
-                .list()
-
-        subscriber.onSuccess(cities.map { city -> mapper.city2local(city) })
-    }
+    fun search(city:String):Single<List<City>> =
+            Single.fromCallable { database.cityDbDao.queryBuilder() }
+                    .map { queryBuilder ->
+                        queryBuilder.where(CityDbDao.Properties.Name.like("$city%"))
+                                .orderAsc(CityDbDao.Properties.Name)
+                                .limit(QUERY_LIMIT)
+                                .list()
+                    }
+                    .map { cities ->
+                        cities.map { city -> mapper.city2local(city)} }
 
 }

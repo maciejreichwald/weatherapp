@@ -8,11 +8,11 @@ import com.rudearts.weatherapp.model.local.Weather
 import javax.inject.Inject
 
 class DetailsPresenter @Inject constructor(
-        internal val view:DetailsContract.View,
+        internal val view:DetailsContract.View?,
         internal val loadWeather:LoadWeatherUseCase) : DetailsContract.Presenter {
 
     override fun loadWeather(cityId:Long) {
-        view.updateLoadingState(LoadingState.LOADING)
+        view?.updateLoadingState(LoadingState.LOADING)
 
         loadWeather.loadWeather(cityId)
                 .threadToAndroid()
@@ -20,7 +20,7 @@ class DetailsPresenter @Inject constructor(
     }
 
     private fun onWeatherLoaded(weather: Weather) {
-        view.updateLoadingState(LoadingState.SHOW_RESULTS)
-        view.updateView(weather)
+        view?.updateLoadingState(LoadingState.SHOW_RESULTS)
+        view?.updateView(weather)
     }
 }

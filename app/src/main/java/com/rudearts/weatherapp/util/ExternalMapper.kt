@@ -24,7 +24,7 @@ class ExternalMapper @Inject constructor(val weatherCodes: WeatherCodes) {
 
     fun weatherResponse2local(response:WeatherResponse?) = with(response ?: WeatherResponse()) {
         val (temperature, humidity, pressure) = main2local(main)
-        return@with Weather(
+        Weather(
                 id2nonnull(id),
                 int2nonnull(cod),
                 cod2main(cod),
@@ -49,12 +49,12 @@ class ExternalMapper @Inject constructor(val weatherCodes: WeatherCodes) {
     }
 
     private fun string2iconId(iconCode: String?) = when(weatherCodes.hasIconCode(iconCode)) {
-        true -> weatherCodes.iconIdByCode(iconCode!!)
+        true -> weatherCodes.iconIdByCode(iconCode)
         false -> R.drawable.d50
     }
 
     private fun cod2description(cod: Int?) = when(weatherCodes.hasDescriptionCode(cod)) {
-        true -> weatherCodes.descriptionIdByCode(cod!!)
+        true -> weatherCodes.descriptionIdByCode(cod)
         false -> UNKNOWN_ID
     }
 
@@ -71,14 +71,14 @@ class ExternalMapper @Inject constructor(val weatherCodes: WeatherCodes) {
         else -> UNKNOWN_ID
     }
 
-    private fun main2local(main: MainExternal?): Triple<Double, Double, Double> {
-        val temperature = main?.temp ?: 0.0
-        val humidity = main?.humidity ?: 0.0
-        val pressure = main?.pressure ?: 0.0
-        return Triple(temperature, humidity, pressure)
-    }
+    private fun main2local(main: MainExternal?) =
+            Triple(double2nonnull(main?.temp),
+                    double2nonnull(main?.humidity),
+                    double2nonnull(main?.pressure))
 
     private fun id2nonnull(id: Long?) = id ?: DEFAULT_ID
 
     private fun int2nonnull(param: Int?) = param ?: 0
+
+    private fun double2nonnull(param: Double?) = param ?: 0.0
 }

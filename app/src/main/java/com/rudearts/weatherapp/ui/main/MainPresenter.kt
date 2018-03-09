@@ -7,11 +7,11 @@ import com.rudearts.weatherapp.model.local.City
 import javax.inject.Inject
 
 class MainPresenter @Inject constructor(
-        internal val view:MainContract.View,
+        internal val view:MainContract.View?,
         internal val searchUseCase:SearchCitiesUseCase) : MainContract.Presenter {
 
     override fun search(city: String) {
-        view.updateLoadingState(LoadingState.LOADING)
+        view?.updateLoadingState(LoadingState.LOADING)
 
         searchUseCase.search(city)
                 .threadToAndroid()
@@ -22,17 +22,17 @@ class MainPresenter @Inject constructor(
     }
 
     private fun onError(error: Throwable) {
-        view.updateLoadingState(LoadingState.NO_RESULTS)
+        view?.updateLoadingState(LoadingState.NO_RESULTS)
 
-        view.showMessage(error.toString())
+        view?.showMessage(error.toString())
     }
 
     private fun onCitiesFound(cities: List<City>) {
-        view.updateCities(cities)
+        view?.updateCities(cities)
 
         when(cities.isEmpty()) {
-            true -> view.updateLoadingState(LoadingState.NO_RESULTS)
-            else -> view.updateLoadingState(LoadingState.SHOW_RESULTS)
+            true -> view?.updateLoadingState(LoadingState.NO_RESULTS)
+            else -> view?.updateLoadingState(LoadingState.SHOW_RESULTS)
         }
     }
 }
