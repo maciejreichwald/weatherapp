@@ -1,3 +1,3 @@
-# Sound Viewer
+# Weather App
 
-Sample app for using iTunes API with Kotlin
+Sample app for loading data with OpenWeatherMap. Written Kotlin
