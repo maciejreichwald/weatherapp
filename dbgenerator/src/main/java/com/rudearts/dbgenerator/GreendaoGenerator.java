@@ -6,7 +6,7 @@ import org.greenrobot.greendao.generator.Schema;
 
 public class GreendaoGenerator {
     public static void main(String args[]) throws Exception {
-        Schema schema = new Schema(2, "com.rudearts.weatherapp.model.greendao");
+        Schema schema = new Schema(4, "com.rudearts.weatherapp.model.greendao");
 
         Entity city = schema.addEntity("CityDb");
         city.setDbName("city");

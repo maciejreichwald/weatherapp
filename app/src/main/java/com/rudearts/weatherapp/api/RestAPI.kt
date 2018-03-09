@@ -14,7 +14,7 @@ interface RestAPI {
         private const val APPID = "51a212e5ece3578a09bb0074db740507"
     }
 
-    @GET("/weather?units=metric&APPID=$APPID")
+    @GET("/data/2.5/weather?units=metric&APPID=$APPID")
     fun getWeather(@Query("id") id:Long): Single<Response<WeatherResponse>>
 
 }
